@@ -40,5 +40,5 @@ ListNode* reverseListAtHeadNode(ListNode *head);
 
 // LeetCode 92 Reverse Linked List II Difficult Degree: Medium
 // 已知链表头结点指针head，将链表位置[m,n]逆序，要求空间复杂度为O(1)
-ListNode* reverseList(ListNode *head,const int m,const int n);
+ListNode* reverseBetween(ListNode *head,const int m,const int n);
 #endif /* funDef_h */
