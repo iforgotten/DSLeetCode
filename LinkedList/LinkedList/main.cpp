@@ -10,7 +10,10 @@
 
 int main(int argc, char **argv)
 {
-    basicsKnowledge();
+    // basicsKnowledge();
+    PLISTNODE head = nullptr;
+    head = initList();
+    releaseList(head);
     return 0;
 }
 

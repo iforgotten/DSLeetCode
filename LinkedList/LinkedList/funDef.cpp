@@ -31,3 +31,42 @@ void basicsKnowledge() {
     printf("\r\n");
     return;
 }
+
+PLISTNODE initList() {
+    PLISTNODE head = new LISTNODE(1);
+    PLISTNODE pNode = head;
+    for(int i = 2; i <= 5; ++i) {
+        pNode->next = new LISTNODE(i);
+        pNode = pNode->next;
+    }
+    return head;
+} // 初始化链表
+
+bool releaseList(PLISTNODE head) {
+    if (!head) {
+        return false;
+    }
+    PLISTNODE pHead = head;
+    while(pHead) {
+        head = pHead->next;
+        delete pHead;
+        pHead = head;
+    }
+
+    return true;
+} // 释放链表空间
+
+void printList(PLISTNODE head, const char *name) {
+    printf("%s :", name);
+    PLISTNODE pNode = head;
+    if(!pNode) {
+        printf("NULL");
+        return;
+    }
+    
+    while(pNode) {
+        printf("[%d] ",pNode->val);
+        pNode = pNode->next;
+    }
+    printf("\r\n");
+} // 遍历输出链表所有元素

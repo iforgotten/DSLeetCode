@@ -17,8 +17,10 @@
 // 基础知识
 void basicsKnowledge();
 
+PLISTNODE initList();
+bool releaseList(PLISTNODE head);
 // 打印链表
-void printList(PLISTNODE head);
+void printList(PLISTNODE head, const char *name);
 
 // LeetCode 206 Reverse Linked List; Difficul Degree: Easy
 // 已知链表头结点指针head，将链表原地逆置
