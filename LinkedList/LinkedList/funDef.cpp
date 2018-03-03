@@ -60,7 +60,7 @@ void printList(PLISTNODE head, const char *name) {
     printf("%s :", name);
     PLISTNODE pNode = head;
     if(!pNode) {
-        printf("NULL");
+        printf("NULL\r\n");
         return;
     }
     
@@ -70,3 +70,26 @@ void printList(PLISTNODE head, const char *name) {
     }
     printf("\r\n");
 } // 遍历输出链表所有元素
+
+ListNode* reverseList(ListNode *head) {
+    if(!head) {
+        return nullptr;
+    }
+    
+    // 指向当前节点
+    PLISTNODE pCurNode = head;
+    PLISTNODE pNext = nullptr;
+    PLISTNODE reverse = nullptr;
+    
+    while(pCurNode) {
+        // 保存当前节点的后一个节点，进行备份，以免后面无法寻址
+        pNext = pCurNode->next;
+        // 断开当前节点与后一节点的连接，因为reverse初始化为nullptr，故可以直接赋值
+        pCurNode->next = reverse;
+        // 指向刚刚摘下来的节点
+        reverse = pCurNode;
+        // 进行下一个节点的寻址操作
+        pCurNode = pNext;
+    }
+    return reverse;
+} // 就地逆置

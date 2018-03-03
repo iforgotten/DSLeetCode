@@ -13,6 +13,9 @@ int main(int argc, char **argv)
     // basicsKnowledge();
     PLISTNODE head = nullptr;
     head = initList();
+    printList(head, "origin");
+    PLISTNODE newList = reverseList(head);
+    printList(newList, "reverse");
     releaseList(head);
     return 0;
 }

@@ -17,6 +17,7 @@
 // 基础知识
 void basicsKnowledge();
 
+// 链表构造及析构
 PLISTNODE initList();
 bool releaseList(PLISTNODE head);
 // 打印链表
