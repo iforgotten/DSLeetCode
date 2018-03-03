@@ -23,7 +23,7 @@ bool releaseList(PLISTNODE head);
 // 打印链表
 void printList(PLISTNODE head, const char *name);
 
-// LeetCode 206 Reverse Linked List; Difficult Degree: Easy
+// LeetCode 206 Reverse Linked List;  Difficulty: Easy
 // 已知链表头结点指针head，将链表原地逆置,分三步
 // 1. 备份后续节点地址，以便下一次寻址
 // 2. 将当前节点从链表中断开，并填充其指针域（如果reverse链初始化为nullptr，则可以用reverse进行填充）
@@ -38,7 +38,11 @@ ListNode* reverseList(ListNode *head);
 // 4. 返回临时头结点的后继指针作为逆置链表的头指针
 ListNode* reverseListAtHeadNode(ListNode *head);
 
-// LeetCode 92 Reverse Linked List II Difficult Degree: Medium
+// LeetCode 92 Reverse Linked List II Difficulty: Medium
 // 已知链表头结点指针head，将链表位置[m,n]逆序，要求空间复杂度为O(1)
 ListNode* reverseBetween(ListNode *head,const int m,const int n);
+
+// LeetCode 21. Merge Two Sorted Lists Difficulty: Easy
+// 已知两个已排序链表头结点指针l1与l2，将这两个链表合并后仍为有序的，返回合并后的头结点
+ListNode* mergeTwoLists(ListNode* l1,ListNode* l2);
 #endif /* funDef_h */
