@@ -10,10 +10,10 @@
 #define DataStructure_h
 
 
-struct ListNode {
-    int val;
-    struct ListNode *next;
-    ListNode(int value) : val(value), next(NULL) {}
-};
+typedef struct ListNode {
+    int val;                                                // 数据域
+    struct ListNode *next;                                  // 指针域
+    ListNode(int value) : val(value), next(nullptr) {}      // 构造函数
+}ListNode,*PListNode;
 
 #endif /* DataStructure_h */

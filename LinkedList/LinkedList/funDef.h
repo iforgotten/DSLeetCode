@@ -9,6 +9,6 @@
 #ifndef funDef_h
 #define funDef_h
 
-void test();
+void basicsKnowledge();
 
 #endif /* funDef_h */

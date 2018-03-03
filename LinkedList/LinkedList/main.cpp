@@ -7,11 +7,10 @@
 //
 
 #include "funDef.h"
-#include "DataStructure.h"
-#include <stdio.h>
 
 int main(int argc, char **argv)
 {
+    basicsKnowledge();
     return 0;
 }
 

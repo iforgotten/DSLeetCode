@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F57C3E1A204A824400A7009B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F57C3E19204A824400A7009B /* main.cpp */; };
+		F57C3E24204A896100A7009B /* funDef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F57C3E23204A896100A7009B /* funDef.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,7 @@
 		F57C3E19204A824400A7009B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		F57C3E20204A85C400A7009B /* funDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = funDef.h; sourceTree = "<group>"; };
 		F57C3E22204A87C600A7009B /* DataStructure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataStructure.h; sourceTree = "<group>"; };
+		F57C3E23204A896100A7009B /* funDef.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = funDef.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +62,9 @@
 			isa = PBXGroup;
 			children = (
 				F57C3E19204A824400A7009B /* main.cpp */,
-				F57C3E20204A85C400A7009B /* funDef.h */,
 				F57C3E22204A87C600A7009B /* DataStructure.h */,
+				F57C3E20204A85C400A7009B /* funDef.h */,
+				F57C3E23204A896100A7009B /* funDef.cpp */,
 			);
 			path = LinkedList;
 			sourceTree = "<group>";
@@ -124,6 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F57C3E1A204A824400A7009B /* main.cpp in Sources */,
+				F57C3E24204A896100A7009B /* funDef.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
