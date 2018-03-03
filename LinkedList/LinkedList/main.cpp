@@ -6,10 +6,13 @@
 //  Copyright © 2018 iforgotten. All rights reserved.
 //
 
+#include "funDef.h"
+#include "DataStructure.h"
 #include <stdio.h>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello World!\r\n");
+int main(int argc, char **argv)
+{
     return 0;
 }
+
+
