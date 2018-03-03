@@ -101,11 +101,14 @@ ListNode* reverseListAtHeadNode(ListNode *head) {
     LISTNODE tmpNode(0);
     
     while (pCur) {
+        // 保存当前节点的后继节点，以便寻址
         pNext = pCur->next;
+        // 作为后继节点插入头结点
         pCur->next = tmpNode.next;
         tmpNode.next = pCur;
+        // 继续寻址
         pCur = pNext;
     }
     reverse = tmpNode.next;
     return reverse;
-}
+} // 头插法逆序
