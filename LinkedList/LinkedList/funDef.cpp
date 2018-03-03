@@ -125,21 +125,28 @@ ListNode* reverseBetween(ListNode *head,const int m,const int n) {
     } else if(!head->next || m - n == 0) {
         return head;
     }
+    // 设置临时头结点,方便运算
     LISTNODE tmpHead(-1);
     tmpHead.next = head;
     PLISTNODE preNode = &tmpHead;
+    // 找到第m个结点的前驱结点，并保存
     for(int i = 1; i <= m - 1; ++i) {
         preNode = preNode->next;
     }
     // 第m个结点，即，第一个待交换的结点
     PLISTNODE pCurNode = preNode->next;
+    // n的后继节点
     PLISTNODE pTailNode = preNode->next;
-    // preNode->next = nullptr;
+
     PLISTNODE reverse = nullptr;
     PLISTNODE pNext = nullptr;
     int len = n - m + 1;
+    
+    // 就地逆置
     for(int i = 1; i <= len; ++i) {
+        // 1. 备份后继，以便寻址
         pNext = pCurNode->next;
+        // 2. 断链
         pCurNode->next = reverse;
         reverse = pCurNode;
         pCurNode = pNext;
