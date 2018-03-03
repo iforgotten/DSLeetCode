@@ -93,3 +93,19 @@ ListNode* reverseList(ListNode *head) {
     }
     return reverse;
 } // 就地逆置
+
+ListNode* reverseListAtHeadNode(ListNode *head) {
+    PLISTNODE reverse = nullptr;
+    PLISTNODE pCur = head;
+    PLISTNODE pNext = nullptr;
+    LISTNODE tmpNode(0);
+    
+    while (pCur) {
+        pNext = pCur->next;
+        pCur->next = tmpNode.next;
+        tmpNode.next = pCur;
+        pCur = pNext;
+    }
+    reverse = tmpNode.next;
+    return reverse;
+}

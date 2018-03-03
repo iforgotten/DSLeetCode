@@ -30,5 +30,6 @@ void printList(PLISTNODE head, const char *name);
 // 3. 寻址后续节点
 ListNode* reverseList(ListNode *head);
 
-
+// 头插法
+ListNode* reverseListAtHeadNode(ListNode *head);
 #endif /* funDef_h */
