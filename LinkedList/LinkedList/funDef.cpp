@@ -122,45 +122,31 @@ ListNode* reverseBetween(ListNode *head,const int m,const int n) {
     // 边界判断
     if(!head) {
         return nullptr;
-    } else if(!head->next) {
+    } else if(!head->next || m - n == 0) {
         return head;
     }
-    PLISTNODE reverse = head;
-    // 人为添加一个头结点
-    LISTNODE list(-1);
-    list.next = head;
-    
-    // 需要前驱、当前节点、后继节点指针
-    // 初始化
-    PLISTNODE preNode = &list;
-    PLISTNODE pCur = head;
-    PLISTNODE postNode = pCur->next;
-    
-    // 查找到第m个结点的前驱
-    int left = m - 1;
-    while(left) {
-        preNode = pCur;
-        if(pCur) {
-            pCur = pCur->next;
-            postNode = pCur->next;
-        }
+    LISTNODE tmpHead(-1);
+    tmpHead.next = head;
+    PLISTNODE preNode = &tmpHead;
+    for(int i = 1; i <= m - 1; ++i) {
+        preNode = preNode->next;
     }
-    // 所需要逆置的序列长度
+    // 第m个结点，即，第一个待交换的结点
+    PLISTNODE pCurNode = preNode->next;
+    PLISTNODE pTailNode = preNode->next;
+    // preNode->next = nullptr;
+    PLISTNODE reverse = nullptr;
+    PLISTNODE pNext = nullptr;
     int len = n - m + 1;
-    
-    // 就地逆置
-    PLISTNODE pHead = nullptr;
-    PLISTNODE pTail = preNode->next;
     for(int i = 1; i <= len; ++i) {
-        preNode->next = postNode;
-        pCur->next = pHead;
-        pHead = pCur;
-        pCur = postNode;
-        if(pCur) {
-            postNode = pCur->next;
-        }
+        pNext = pCurNode->next;
+        pCurNode->next = reverse;
+        reverse = pCurNode;
+        pCurNode = pNext;
     }
-    pTail->next = preNode->next;
-    preNode->next = pHead->next;
-    return reverse;
+    if(pTailNode) {
+        pTailNode->next = pNext;
+    }
+    preNode->next = reverse;
+    return tmpHead.next;
 }

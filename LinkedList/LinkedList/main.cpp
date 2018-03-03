@@ -18,7 +18,7 @@ int main(int argc, char **argv)
     printList(newList, "reverse");
     PLISTNODE headList = reverseListAtHeadNode(newList);
     printList(headList, "AtHead");
-    PLISTNODE rangeList = reverseBetween(headList,1,2);
+    PLISTNODE rangeList = reverseBetween(headList,3,4);
     printList(rangeList, "rangeList");
     // releaseList(head);
     return 0;
