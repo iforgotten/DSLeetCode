@@ -13,6 +13,16 @@
 #ifndef funDef_h
 #define funDef_h
 
+#include "DataStructure.h"
+// 基础知识
 void basicsKnowledge();
+
+// 打印链表
+void printList(PLISTNODE head);
+
+// LeetCode 206 Reverse Linked List; Difficul Degree: Easy
+// 已知链表头结点指针head，将链表原地逆置
+ListNode* reverseList(ListNode *head);
+
 
 #endif /* funDef_h */

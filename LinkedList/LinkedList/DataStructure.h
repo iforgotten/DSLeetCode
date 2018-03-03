@@ -14,6 +14,6 @@ typedef struct ListNode {
     int val;                                                // 数据域
     struct ListNode *next;                                  // 指针域
     ListNode(int value) : val(value), next(nullptr) {}      // 构造函数
-}ListNode,*PListNode;
+}LISTNODE,*PLISTNODE;
 
 #endif /* DataStructure_h */
