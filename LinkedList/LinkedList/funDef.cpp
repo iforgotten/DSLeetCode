@@ -26,7 +26,7 @@ void basicsKnowledge() {
     
     PListNode pHead = &a;
     while(pHead) {
-        printf("%d ",pHead->val);
+        printf("The current Node value is %d, Address is %p, The next node address is %p\r\n",pHead->val,&pHead, pHead->next);
         pHead = pHead->next;
     }
     printf("\r\n");

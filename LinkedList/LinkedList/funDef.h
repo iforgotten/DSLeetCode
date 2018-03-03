@@ -6,6 +6,10 @@
 //  Copyright © 2018 iforgotten. All rights reserved.
 //
 
+/**
+    所有函数的头文件
+ **/
+
 #ifndef funDef_h
 #define funDef_h
 
