@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <set>
+#include <vector>
 
 // 链表的基础知识
 void basicsKnowledge() {
@@ -273,3 +274,19 @@ ListNode *getIntersectionNode2(ListNode *headA, ListNode *headB) {
     }
     return nullptr;
 } // 利用STL中的set集合的特性，进行去重操作；
+
+bool hasCycle(ListNode *head) {
+    // 创建集合，set为平衡树实现的
+    std::set<PLISTNODE> buff;
+    PLISTNODE pNode = head;
+    while(pNode) {
+        // 如果在buff里面有相同地址的内存单元，则会在最后一个迭代器之前
+        if(buff.find(pNode) != buff.end()) {
+            // 找到，表示有环
+            return true;
+        }
+        buff.insert(pNode);
+        pNode = pNode->next;
+    }
+    return false;
+} // 判断是否有环
