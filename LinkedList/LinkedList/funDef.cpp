@@ -161,15 +161,20 @@ ListNode* reverseBetween(ListNode *head,const int m,const int n) {
 ListNode* mergeTwoLists(ListNode* l1,ListNode* l2) {
     LISTNODE head(-1);
     
+    // 初始化三个指针，分别用来遍历三个链表：l1, l2, newList
     PLISTNODE pl1 = l1;
     PLISTNODE pl2 = l2;
     PLISTNODE pHead = &head;
     
     while(pl1 && pl2) {
         if(pl1->val <= pl2->val) {
+            // 1. 备份
             l1 = pl1->next;
+            // 2. 锻炼
             pl1->next = nullptr;
+            // 3. 插入
             pHead->next = pl1;
+            // 4. 寻址
             pHead = pHead->next;
             pl1 = l1;
         } else {
@@ -188,26 +193,13 @@ ListNode* mergeTwoLists(ListNode* l1,ListNode* l2) {
     if (pl2) {
         pHead->next = pl2;
     }
-    
-    /*
-    while(pl1) {
-        l1 = pl1->next;
-        pl1->next = nullptr;
-        pHead->next = pl1;
-        pHead = pHead->next;
-        pl1 = l1;
-    }
-    
-    while(pl2) {
-        l2 = pl2->next;
-        pl2->next = nullptr;
-        pHead->next = pl2;
-        pHead = pHead->next;
-        pl2 = l2;
-    }
-    */
     pl1 = nullptr;
     pl2 = nullptr;
     pHead = nullptr;
     return head.next;
 } // 合并两个已经排好序的链表
+
+ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+    PLISTNODE intersect = nullptr;
+    return intersect;
+} // 获取良相交链表的对应的结点

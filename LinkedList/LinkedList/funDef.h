@@ -45,4 +45,8 @@ ListNode* reverseBetween(ListNode *head,const int m,const int n);
 // LeetCode 21. Merge Two Sorted Lists Difficulty: Easy
 // 已知两个已排序链表头结点指针l1与l2，将这两个链表合并后仍为有序的，返回合并后的头结点
 ListNode* mergeTwoLists(ListNode* l1,ListNode* l2);
+
+// LeetCode 160. Intersection of Two Linked Lists Difficulty: Easy
+// 已知链表A的头结点headA，链表B的头结点headB，两个链表相交，求两链表交点对应的结点
+ListNode *getIntersectionNode(ListNode *headA, ListNode *headB);
 #endif /* funDef_h */
