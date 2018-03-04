@@ -181,6 +181,15 @@ ListNode* mergeTwoLists(ListNode* l1,ListNode* l2) {
         }
     }
     
+    if (pl1) {
+        pHead->next = pl1;
+    }
+    
+    if (pl2) {
+        pHead->next = pl2;
+    }
+    
+    /*
     while(pl1) {
         l1 = pl1->next;
         pl1->next = nullptr;
@@ -196,8 +205,9 @@ ListNode* mergeTwoLists(ListNode* l1,ListNode* l2) {
         pHead = pHead->next;
         pl2 = l2;
     }
-    
-    l1 = nullptr;
-    l2 = nullptr;
+    */
+    pl1 = nullptr;
+    pl2 = nullptr;
+    pHead = nullptr;
     return head.next;
 } // 合并两个已经排好序的链表
