@@ -8,6 +8,7 @@
 
 #include "funDef.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 // 链表的基础知识
 void basicsKnowledge() {
@@ -200,6 +201,53 @@ ListNode* mergeTwoLists(ListNode* l1,ListNode* l2) {
 } // 合并两个已经排好序的链表
 
 ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
-    PLISTNODE intersect = nullptr;
-    return intersect;
-} // 获取良相交链表的对应的结点
+    // 边界判断
+    if(headA == nullptr || headB == nullptr) {
+        return nullptr;
+    } else if (headA == headB) {
+        return headA;
+    }
+    
+    PLISTNODE pA = headA;
+    PLISTNODE pB = headB;
+    int lenA = 0;
+    int lenB = 0;
+    
+    // 获取A,B链表的长度
+    while (pA || pB) {
+        if(pA) {
+            lenA++;
+            pA = pA->next;
+        }
+        if(pB) {
+            lenB++;
+            pB = pB->next;
+        }
+    }
+
+    // 对齐
+    pA = headA;
+    pB = headB;
+    int minus = lenB - lenA;
+    for(int i = 1; i <= abs(minus); ++i) {
+        if(minus < 0) {
+            // lenB < lenA
+            pA = pA->next;
+        }
+        if(minus > 0) {
+            pB = pB->next;
+        }
+    }
+    
+    // 两个指针开始遍历
+    while (pA && pB && pA != pB) {
+        pA = pA->next;
+        pB = pB->next;
+    }
+    
+    if(pA == nullptr || pB == nullptr) {
+        return nullptr;
+    } else {
+        return pA;
+    }
+} // 获取两相交链表的对应的结点
