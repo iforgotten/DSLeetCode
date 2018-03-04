@@ -290,3 +290,18 @@ bool hasCycle(ListNode *head) {
     }
     return false;
 } // 判断是否有环
+
+ListNode *detectCycle(ListNode *head) {
+    std::set<PLISTNODE> buff;
+    PLISTNODE pNode = head;
+    while(pNode) {
+        // 如果在buff里面有相同地址的内存单元，则会在最后一个迭代器之前
+        if(buff.find(pNode) != buff.end()) {
+            // 找到，表示有环
+            return pNode;
+        }
+        buff.insert(pNode);
+        pNode = pNode->next;
+    }
+    return nullptr;
+} // 返回有环的第一个结点
