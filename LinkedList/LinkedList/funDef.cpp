@@ -291,6 +291,29 @@ bool hasCycle(ListNode *head) {
     return false;
 } // 判断是否有环
 
+bool hasCycle2(ListNode *head) {
+    if(!head) {
+        return false;
+    }
+    PLISTNODE fast = head;
+    PLISTNODE slow = head;
+    
+    while(fast) {
+        fast = fast->next;
+        if(!fast) {
+            return false;
+        }
+        slow = slow->next;
+        fast = fast->next;
+        
+        // 是否相遇，如果相遇，则跳出循环；
+        if(fast == slow) {
+            return true;
+        }
+    }
+    return false;
+}
+
 ListNode *detectCycle(ListNode *head) {
     std::set<PLISTNODE> buff;
     PLISTNODE pNode = head;
@@ -305,3 +328,37 @@ ListNode *detectCycle(ListNode *head) {
     }
     return nullptr;
 } // 返回有环的第一个结点
+
+ListNode *detectCycle2(ListNode *head) {
+    PLISTNODE fast = head;
+    PLISTNODE slow = head;
+    PLISTNODE meet = nullptr;
+    
+    // 快慢指针
+    while(fast) {
+        fast = fast->next;
+        if(fast) {
+            return nullptr;
+        }
+        // 慢指针每次走一步，快指针每次走两步
+        slow = slow->next;
+        fast = fast->next;
+        
+        // 快慢指针相遇
+        if(fast == slow) {
+            meet = fast;
+            break;
+        }
+    }
+    
+    // 如果meet等于空，则表示没有环
+    while(meet == nullptr) {
+        return nullptr;
+    }
+    
+    while(head != meet) {
+        head = head->next;
+        meet = meet->next;
+    }
+    return head;
+} // 快慢指针进行判断是否有环，有环返回其环的首节点

@@ -55,7 +55,10 @@ ListNode *getIntersectionNode2(ListNode *headA, ListNode *headB);
 // LeetCode 141. Linked List Cycle Difficulty: Easy
 // 已知链表中可能有环，如有环，返回true，没有，返回FALSE；
 bool hasCycle(ListNode *head);
+// 快慢指针
+bool hasCycle2(ListNode *head);
 // LeetCode 142. Linked List Cycle Difficulty: Medium
 // 已知链表中可能有环，如有环，返回环的起始结点，否则返回NULL
 ListNode *detectCycle(ListNode *head);
+ListNode *detectCycle2(ListNode *head);
 #endif /* funDef_h */
