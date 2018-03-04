@@ -9,6 +9,7 @@
 #include "funDef.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <set>
 
 // 链表的基础知识
 void basicsKnowledge() {
@@ -251,3 +252,24 @@ ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
         return pA;
     }
 } // 获取两相交链表的对应的结点
+
+ListNode *getIntersectionNode2(ListNode *headA, ListNode *headB) {
+    std::set<PLISTNODE> buff;
+    PLISTNODE pA = headA;
+    PLISTNODE pB = headB;
+    
+    // 初始化set
+    while(pA) {
+        buff.insert(pA);
+        pA = pA->next;
+    }
+    
+    while(pB) {
+        // 如果能找到相同的地址，说明有交点，返回第一个交点即可
+        if(buff.find(pB) != buff.end()) {
+            return pB;
+        }
+        pB = pB->next;
+    }
+    return nullptr;
+} // 利用STL中的set集合的特性，进行去重操作；

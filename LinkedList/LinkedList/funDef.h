@@ -49,4 +49,6 @@ ListNode* mergeTwoLists(ListNode* l1,ListNode* l2);
 // LeetCode 160. Intersection of Two Linked Lists Difficulty: Easy
 // 已知链表A的头结点headA，链表B的头结点headB，两个链表相交，求两链表交点对应的结点
 ListNode *getIntersectionNode(ListNode *headA, ListNode *headB);
+// 解决160. 的第二种算法
+ListNode *getIntersectionNode2(ListNode *headA, ListNode *headB);
 #endif /* funDef_h */
