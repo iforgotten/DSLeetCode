@@ -14,13 +14,32 @@ int main(int argc, char **argv)
     PLISTNODE head = nullptr;
     head = initList();
     printList(head, "origin");
+    
     PLISTNODE newList = reverseList(head);
     printList(newList, "reverse");
+    
     PLISTNODE headList = reverseListAtHeadNode(newList);
     printList(headList, "AtHead");
+    
     PLISTNODE rangeList = reverseBetween(headList,3,4);
     printList(rangeList, "rangeList");
-    // releaseList(head);
+    
+    PLISTNODE l1 = nullptr;
+    PLISTNODE l2 = nullptr;
+    l1 = initList();
+    l2 = initList();
+    PLISTNODE mergeList = mergeTwoLists(l1,l2);
+    printList(mergeList, "mergeList");
+    
+    releaseList(rangeList);
+    releaseList(mergeList);
+    
+    head = nullptr;
+    newList = nullptr;
+    headList = 
+    mergeList = nullptr;
+    l1 = nullptr;
+    l2 = nullptr;
     return 0;
 }
 

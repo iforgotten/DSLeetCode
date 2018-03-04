@@ -52,7 +52,7 @@ bool releaseList(PLISTNODE head) {
         delete pHead;
         pHead = head;
     }
-
+    head = nullptr;
     return true;
 } // 释放链表空间
 
@@ -156,4 +156,48 @@ ListNode* reverseBetween(ListNode *head,const int m,const int n) {
     }
     preNode->next = reverse;
     return tmpHead.next;
-}
+} // 逆置[m,n]的链表结点，并返回原链表指针
+
+ListNode* mergeTwoLists(ListNode* l1,ListNode* l2) {
+    LISTNODE head(-1);
+    
+    PLISTNODE pl1 = l1;
+    PLISTNODE pl2 = l2;
+    PLISTNODE pHead = &head;
+    
+    while(pl1 && pl2) {
+        if(pl1->val <= pl2->val) {
+            l1 = pl1->next;
+            pl1->next = nullptr;
+            pHead->next = pl1;
+            pHead = pHead->next;
+            pl1 = l1;
+        } else {
+            l2 = pl2->next;
+            pl2->next = nullptr;
+            pHead->next = pl2;
+            pHead = pHead->next;
+            pl2 = l2;
+        }
+    }
+    
+    while(pl1) {
+        l1 = pl1->next;
+        pl1->next = nullptr;
+        pHead->next = pl1;
+        pHead = pHead->next;
+        pl1 = l1;
+    }
+    
+    while(pl2) {
+        l2 = pl2->next;
+        pl2->next = nullptr;
+        pHead->next = pl2;
+        pHead = pHead->next;
+        pl2 = l2;
+    }
+    
+    l1 = nullptr;
+    l2 = nullptr;
+    return head.next;
+} // 合并两个已经排好序的链表
