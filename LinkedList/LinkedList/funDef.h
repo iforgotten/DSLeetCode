@@ -51,4 +51,11 @@ ListNode* mergeTwoLists(ListNode* l1,ListNode* l2);
 ListNode *getIntersectionNode(ListNode *headA, ListNode *headB);
 // 解决160. 的第二种算法
 ListNode *getIntersectionNode2(ListNode *headA, ListNode *headB);
+
+// LeetCode 141. Linked List Cycle Difficulty: Easy
+// 已知链表中可能有环，如有环，返回true，没有，返回FALSE；
+bool hasCycle(ListNode *head);
+// LeetCode 142. Linked List Cycle Difficulty: Medium
+// 已知链表中可能有环，如有环，返回环的起始结点，否则返回NULL
+ListNode *detectCycle(ListNode *head);
 #endif /* funDef_h */
