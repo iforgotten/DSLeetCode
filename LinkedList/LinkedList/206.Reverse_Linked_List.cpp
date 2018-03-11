@@ -9,9 +9,9 @@ ListNode* reverseList(ListNode *head) {
     }
     
     // 指向当前节点
-    PLISTNODE pCurNode = head;
-    PLISTNODE pNext = nullptr;
-    PLISTNODE reverse = nullptr;
+    ListNode* pCurNode = head;
+    ListNode* pNext = nullptr;
+    ListNode* reverse = nullptr;
     
     while(pCurNode) {
         // 保存当前节点的后一个节点，进行备份，以免后面无法寻址
@@ -33,10 +33,10 @@ ListNode* reverseList(ListNode *head) {
 // 3. 作为后继节点插入临时头结点
 // 4. 返回临时头结点的后继指针作为逆置链表的头指针
 ListNode* reverseListAtHeadNode(ListNode *head) {
-    PLISTNODE reverse = nullptr;
-    PLISTNODE pCur = head;
-    PLISTNODE pNext = nullptr;
-    LISTNODE tmpNode(0);
+    ListNode* reverse = nullptr;
+    ListNode* pCur = head;
+    ListNode* pNext = nullptr;
+    ListNode tmpNode(0);
     
     while (pCur) {
         // 保存当前节点的后继节点，以便寻址
