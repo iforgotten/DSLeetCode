@@ -26,6 +26,12 @@ ListNode* reverseList(ListNode *head) {
     return reverse;
 } // 就地逆置
 
+// 头插法逆序
+// 步骤：
+// 1. 设置临时头结点
+// 2. 保存当前节点的后继节点，以便于下次寻址
+// 3. 作为后继节点插入临时头结点
+// 4. 返回临时头结点的后继指针作为逆置链表的头指针
 ListNode* reverseListAtHeadNode(ListNode *head) {
     PLISTNODE reverse = nullptr;
     PLISTNODE pCur = head;
