@@ -22,3 +22,23 @@ public:
 		return result;
     }
 };
+
+class Solution {
+public:
+	vector<vector<int>> subsets(vector<int>& nums) {
+		std::vector<std::vector<int>> result;
+		// 计算所有可能的取值范围
+		int all_set = 1 << nums.size();
+		
+		for(int i = 0; i < all_set; ++i) {
+			std::vector<int> item;
+			for(int j = 0; j < nums.size(); ++j) {
+				if(i & (1 << j)) {
+					item.push_back(nums[j]);
+				}
+			}
+			result.push_back(item);
+		}
+		return result;
+    }
+};
